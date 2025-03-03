@@ -1,6 +1,11 @@
 import streamlit as st
 import pickle
-Model=pickle.load(open('F:\Learn\oracuz\Streamlit\cancer\cancer','rb'))
+# Ensure the file is in the correct location
+model_path = os.path.join(os.getcwd(), "cancer")
+
+# Load the model
+with open(model_path, "rb") as file:
+    Model = pickle.load(file)
 c=st.number_input('Clump Thickness')
 size=st.number_input('Uniformity of Cell Size')
 shape=st.number_input('Uniformity of Cell Shape')
