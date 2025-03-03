@@ -1,7 +1,6 @@
 import streamlit as st
-import joblib
-import os
-Model = joblib.load('cancer.pkl')
+import pickle
+Model=pickle.load(open("cancer.pkl",'rb'))
 c=st.number_input('Clump Thickness')
 size=st.number_input('Uniformity of Cell Size')
 shape=st.number_input('Uniformity of Cell Shape')
