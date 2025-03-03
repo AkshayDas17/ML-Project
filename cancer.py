@@ -1,8 +1,10 @@
 import streamlit as st
 import pickle
 import os
-model_path = os.path.abspath('ML-Project/cancer')
-Model = pickle.load(open(model_path, 'rb'))
+import os
+print("Current Working Directory:", os.getcwd())
+print("Files in Directory:", os.listdir('ML-Project'))
+
 c=st.number_input('Clump Thickness')
 size=st.number_input('Uniformity of Cell Size')
 shape=st.number_input('Uniformity of Cell Shape')
