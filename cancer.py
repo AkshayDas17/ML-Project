@@ -1,5 +1,6 @@
 import streamlit as st
 import pickle
+import os
 # Ensure the file is in the correct location
 model_path = os.path.join(os.getcwd(), "cancer")
 
