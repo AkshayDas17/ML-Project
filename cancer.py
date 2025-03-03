@@ -1,12 +1,11 @@
 import streamlit as st
 import pickle
 import os
-# Ensure the file is in the correct location
-model_path = os.path.join(os.getcwd(), "cancer")
+uploaded_file = st.file_uploader("Upload your model file", type=["pkl"])
 
-# Load the model
-with open(model_path, "rb") as file:
-    Model = pickle.load(file)
+if uploaded_file is not None:
+    Model = pickle.load(uploaded_file)
+    st.write("Model loaded successfully!")
 c=st.number_input('Clump Thickness')
 size=st.number_input('Uniformity of Cell Size')
 shape=st.number_input('Uniformity of Cell Shape')
